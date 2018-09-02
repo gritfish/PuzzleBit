@@ -1,0 +1,238 @@
+:root {
+	--color_body: #c1bdba;
+	--color_screenwrap: rgba(0, 0, 0, 0.2);
+	--color_screen: black;
+	--color_dpad: #333;
+	--color_buttons: #a91f68;
+	--color_startSelect: #7b7579;
+	--color_text: rgba(0, 0, 0, 0.7);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: black;
+
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+#main {
+	background: var(--color_body);
+	height: 100vh;
+	width: 100vw;
+	border-radius: 2vw;
+	border-bottom-right-radius: 10vw;
+	box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.2) inset, 2px 2px 5px rgba(255, 255, 255, 0.7) inset;
+}
+
+#screenWrap {
+	background: var(--color_screenwrap);
+	height: 96vw;
+	width: 96vw;
+	position: absolute;
+	top: 2vw;
+	left: 2vw;
+	border-bottom-right-radius: 4vw;
+	max-height: 55vh;
+}
+
+#screen {
+	background: var(--color_screen);
+	height: 90vw;
+	width: 90vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	max-height: 50vh;
+	max-width: 50vh;
+}
+
+#dpad {
+	width: 35vw;
+	height: 35vw;
+	position: absolute;
+	top: 65vh;
+	left: 5vw;
+
+	max-width: 220px;
+	max-height: 220px;
+}
+
+#up,
+#down,
+#left,
+#right,
+#center {
+	width: calc(100%/3);
+	height: calc(100%/3);
+	background: var(--color_dpad);
+	position: absolute;
+	border-radius: 30%;
+	box-shadow: 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#up {
+	top: 0;
+	left: calc(100%/3);
+	border-top-left-radius: 15%;
+	border-top-right-radius: 15%;
+	box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#down {
+	bottom: 0;
+	left: calc(100%/3);
+	border-bottom-left-radius: 15%;
+	border-bottom-right-radius: 15%;
+	box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#left {
+	left: 0;
+	top: calc(100%/3);
+	border-top-left-radius: 15%;
+	border-bottom-left-radius: 15%;
+	box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#right {
+	right: 0;
+	top: calc(100%/3);
+	border-top-right-radius: 15%;
+	border-bottom-right-radius: 15%;
+	box-shadow: -2px -2px 2px rgba(0, 0, 0, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#center {
+	right: calc(100%/3);
+	top: calc(100%/3);
+	display: none;
+}
+
+#startSelect {
+	position: absolute;
+	width: 30vw;
+	height: 5vw;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 88vh;
+	max-height: 75px;
+	max-width: 225px;
+}
+
+#start {
+	background: #555;
+	position: absolute;
+	width: 40%;
+	height: 100%;
+	right: 0;
+	border-radius: 5px;
+	box-shadow: -2px -2px 0px rgba(0, 0, 0, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#select {
+	background: #555;
+	position: absolute;
+	width: 40%;
+	height: 100%;
+	border-radius: 5px;
+	box-shadow: -2px -2px 0px rgba(0, 0, 0, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+
+#ab {
+	width: 35vw;
+	height: 15vw;
+	top: calc(65vh + 5vw);
+	right: 5vw;
+	position: absolute;
+	transform: rotate(-15deg);
+
+	max-width: 175px;
+	max-height: 75px;
+}
+
+#aButton,
+#bButton {
+	background: var(--color_buttons);
+	border-radius: 50%;
+	width: 40%;
+	height: 100%;
+	box-shadow: -5px -5px 0px rgba(0, 0, 0, 0.2) inset, 1px 3px 0px rgba(0, 0, 0, 0.7);
+}
+.bitsy #bButton{
+	display: none;
+}
+
+#aButton {
+	position: absolute;
+	right: 0;
+}
+.bitsy #aButton{
+	right: auto;
+	left: 40%;
+}
+
+#bButton {
+	position: absolute;
+	left: 0;
+}
+
+#speaker {}
+
+#game,
+#gameCanvas {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.pressed {
+	transform: translateX(2px) translateY(2px);
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2) inset !important;
+}
+
+#gameTitle {
+	color: var(--color_text);
+	position: absolute;
+	font-family: arial;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 3vh;
+	bottom: -5vh;
+	left: 0;
+}
+
+#gameTitle span {
+	font-size: 2.4vh;
+}
+
+#aButton span,
+#bButton span {
+	display: block;
+	position: absolute;
+	top: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 3vh;
+	font-family: arial;
+	font-weight: bold;
+	color: var(--color_text);
+}
+
+#start span,
+#select span {
+	display: block;
+	position: absolute;
+	top: 140%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.7vh;
+	font-family: arial;
+	font-weight: bold;
+	color: var(--color_text);
+}
